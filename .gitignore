@@ -4,3 +4,5 @@ npm-debug.log
 node_modules
 public/css/compiled.*
 public/js/compiled.*
+*.log
+npm-debug.log*
