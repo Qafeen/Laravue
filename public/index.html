@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title v-if="! $route.meta.title">Laravue</title>
+    <template v-else>
+        <title>{{ $route.meta.title }}</title>
+    </template>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="/css/compiled.css">
+</head>
+<body>
+<div id="app" class="flex-center position-ref full-height">
+    <app-header v-show="isAuth()"></app-header>
+    <app-leftbar v-show="isAuth()"></app-leftbar>
+
+    <div class="content">
+        <transition name="fade">
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
+    </div>
+
+    <script src="js/compiled.js"></script>
+    <script src="js/app.js"></script>
+</div>
+
+
+</body>
+</html>
