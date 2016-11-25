@@ -26,6 +26,6 @@ elixir(function(mix) {
     .scripts([
         'public/js/custom.js'
     ], 'public/js/compiled.js')
-    .sass('assets/sass/app.scss')
+    .sass('assets/sass/app.scss','public/css/app.css')
     .webpack('app/main.js', 'public/js/app.js');
 });
