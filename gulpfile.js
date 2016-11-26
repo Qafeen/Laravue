@@ -11,6 +11,7 @@ require('laravel-elixir-vue-2');
 elixir.config.assetsPath = './';
 elixir.config.js.folder  = './';
 elixir.config.css.folder = './';
+elixir.config.css.sass.folder = './';
 
 /*
  |--------------------------------------------------------------------------
@@ -25,5 +26,6 @@ elixir(function(mix) {
     .scripts([
         'public/js/custom.js'
     ], 'public/js/compiled.js')
+    .sass('assets/sass/app.scss','public/css/app.css')
     .webpack('app/main.js', 'public/js/app.js');
 });
