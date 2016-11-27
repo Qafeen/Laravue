@@ -13,23 +13,15 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="dist/css/compiled.css">
+    <!-- Latest compiled and minified CSS -->
 </head>
 <body>
-<div id="app" class="flex-center position-ref full-height">
-    <app-header v-show="isAuth()"></app-header>
-    <app-leftbar v-show="isAuth()"></app-leftbar>
 
-    <div class="content">
-        <transition name="fade">
-            <keep-alive>
-                <router-view></router-view>
-            </keep-alive>
-        </transition>
-    </div>
-</div>
+	<div id="app" class="flex-center position-ref full-height">
+		<router-view></router-view>
+	</div>
 
-<script src="dist/js/compiled.js"></script>
-<script src="dist/js/app.js"></script>
+	<!-- built files will be auto injected -->
+
 </body>
 </html>

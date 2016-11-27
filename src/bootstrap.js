@@ -1,7 +1,7 @@
 
 window.config = {
     appname: 'Cars Tariff',
-    api: 'http://su.carstariff.dev/api'
+    api: 'http://laravueapi.dev/api'
 };
 
 /**
@@ -12,7 +12,9 @@ window.config = {
 
 window._ = require('lodash');
 
-window.Vue = require('vue');
-require('vue-resource');
+window.Vue 	 = require('vue');
+window.axios = require('axios');
 
 
+window.$ = window.jQuery = require('jquery');
+require('bootstrap');

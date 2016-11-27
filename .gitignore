@@ -1,7 +1,4 @@
-.env
-yarn.lock
+.DS_Store
+node_modules/
+dist/
 npm-debug.log
-node_modules
-public/dist/*
-*.log
-npm-debug.log*
