@@ -1,7 +1,7 @@
 <template>
 	<div>
-    	<app-header></app-header>
-	    <app-left-bar></app-left-bar>
+    	<app-header v-show="isLoggedIn"></app-header>
+	    <app-left-bar v-show="isLoggedIn"></app-left-bar>
 		<div class="content">
 	        <transition name="fade">
 	            <router-view></router-view>
@@ -17,6 +17,13 @@
 
   	export default {
     	name : 'DefaultLayout',
+
+    	data() {
+    	    return {
+    	        isLoggedIn: Boolean(localStorage.token)
+    	    }
+    	},
+
     	components : {
     		AppHeader, AppLeftBar, AppMessage
     	}
@@ -24,7 +31,5 @@
 </script>
 
 <style>
-	  @import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
-
-
+    @import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 </style>

@@ -26,10 +26,13 @@ const router = new VueRouter({
 // sync(store, router);
 
 router.beforeEach((to, from, next) => {
-    if ((! localStorage.token) && to.matched[0].name !== 'login') {
-        next('login');
-    } else if (localStorage.token && to.matched[0].name === 'login') {
-        next('/');
+    if (to.meta.isAuthPage == true) {
+        if ((!localStorage.token) && to.matched[0].name !== 'login') {
+            next('login');
+        } else {
+            next('/');
+        }
+
     } else {
         next();
     }
@@ -42,12 +45,10 @@ router.beforeEach((to, from, next) => {
  */
 
 axios.interceptors.request.use(function (config) {
+	config.headers.common['X-PERSONAL-TOKEN'] = localStorage.token || '';
 
-	config.headers.common['X-PERSONAL-TOKEN'] = localStorage.token || ''
     return config;
-
 }, function (error) {
-
 	return Promise.reject(error);
 });
 

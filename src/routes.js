@@ -16,7 +16,8 @@ export default [
                 path: 'dashboard',
                 name: 'dashboard',
                 meta: {
-                    title: 'Dashboard'
+                    title: 'Dashboard',
+                    isAuthPage: true
                 },
                 component: require('./components/Dashboard.vue')
             }

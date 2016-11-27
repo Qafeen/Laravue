@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
@@ -38,7 +37,9 @@
                 this.$router.go(1);
             },
             title() {
-                return typeof this.$route.meta.title !== 'undefined' ? this.$route.meta.title : 'Dashboard';
+                return typeof this.$route.meta.title !== 'undefined' ?
+                        this.$route.meta.title :
+                        'Dashboard';
             }
         }
     }
