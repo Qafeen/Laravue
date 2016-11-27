@@ -45,13 +45,16 @@
 
         methods: {
             login() {
-                this.$http.post(`${config.api}/login`, this.$data)
-                .then(function(response) {
-                    window.localStorage.user  = JSON.stringify(response.body.user);
-                    window.localStorage.token = response.body.token;
+                let _this = this;
 
-                    this.$router.push('/');
-                    this.$router.go(1);
+                axios.post(`${config.api}/login`, this.$data)
+                .then(function(response) {
+                    console.log(response)
+                    window.localStorage.user  = JSON.stringify(response.data.user);
+                    window.localStorage.token = response.data.token;
+
+                    _this.$router.push('/');
+                    _this.$router.go(1);
                 })
             }
         }

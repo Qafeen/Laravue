@@ -19,7 +19,7 @@
 <style src="sweetalert/dist/sweetalert.css"></style>
 
 <script>
-    import 'sweetalert/dist/sweetalert.min.js';
+    import 'sweetalert';
 
     export default {
         props: ['errors', 'messages'],

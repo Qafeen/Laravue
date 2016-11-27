@@ -7,23 +7,19 @@
 
 require('./bootstrap');
 // import { sync } from 'vuex-router-sync';
-import store from '../storage/store';
+import store from './storage/store';
 import VueRouter from 'vue-router';
 import routes from './routes';
 
 Vue.use(VueRouter);
 
-/**
- * Registering components
- */
-Vue.component('app-header', require('../components/partials/header.vue'));
-Vue.component('app-leftbar', require('../components/partials/leftbar.vue'));
-Vue.component('app-message', require('../components/partials/message.vue'));
-
 const router = new VueRouter({
     mode: 'history',
     base: __dirname,
-    routes
+    routes,
+    scrollBehavior (to, from, savedPosition) {
+    	return { x: 0, y: 0 }
+  	}
 });
 
 // Syncing store with vue-router
@@ -45,10 +41,14 @@ router.beforeEach((to, from, next) => {
  * included with Laravel will automatically verify the header's value.
  */
 
-Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-PERSONAL-TOKEN', localStorage.token || '');
+axios.interceptors.request.use(function (config) {
 
-    next();
+	config.headers.common['X-PERSONAL-TOKEN'] = localStorage.token || ''
+    return config;
+
+}, function (error) {
+
+	return Promise.reject(error);
 });
 
 

@@ -1,8 +1,18 @@
-# Laravue
-Single Page application framework. (Completely in development stage.)
+# laravue
 
-### Vision to build this project.
-1. Make easy for developer to get started with SPA and laravel with passport.
-2. Give developer a good security and flexibility. 
+> SPA framework which is highly compatible with Laravel.
 
-> To start a dev-server, go to your terminal and change directory to public and type ($ php -S localhost:8080)
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
