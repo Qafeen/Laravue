@@ -22,10 +22,10 @@ elixir.config.css.sass.folder = './';
 elixir(function(mix) {
     mix.styles([
         'public/css/custom.css'
-    ], 'public/css/compiled.css')
+    ], 'public/dist/css/compiled.css')
     .scripts([
         'public/js/custom.js'
-    ], 'public/js/compiled.js')
-    .sass('assets/sass/app.scss','public/css/app.css')
-    .webpack('app/main.js', 'public/js/app.js');
+    ], 'public/dist/js/compiled.js')
+    .sass('assets/sass/app.scss','public/dist/css/app.css')
+    .webpack('app/main.js', 'public/dist/js/app.js');
 });

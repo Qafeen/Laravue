@@ -2,7 +2,6 @@
 yarn.lock
 npm-debug.log
 node_modules
-public/css/compiled.*
-public/js/compiled.*
+public/dist/*
 *.log
 npm-debug.log*
