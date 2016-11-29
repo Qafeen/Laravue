@@ -1,7 +1,7 @@
 export default [
     {
         path : '/',
-        component: require('./components/Layouts/Default.vue'),
+        component: require('./components/layouts/Default.vue'),
         name : 'DefaultLayout',
         children :  [ 
             {
