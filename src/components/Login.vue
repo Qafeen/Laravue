@@ -1,33 +1,54 @@
 <template>
-    <!-- BEGIN LOGIN BOX -->
     <div class="container">
-        <div class="alert alert-danger hide">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <h4>Validation Failed!</h4>
-        </div>
-        <!-- END ERROR BOX -->
-        <div data-action="/login" method="post" id="login-form">
-            <input type="text" placeholder="Username/Email" name="username" v-model="email"
-                   class="input-field form-control email" />
-            <input type="password" placeholder="Password" name="password" v-model="password"
-                   class="input-field form-control password" />
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="remember" data-theme="b" class="hide">
-                    <div class="text-right">Remember Me</div>
-                </label>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="username" class="col-md-4 control-label">E-Mail Address</label>
+
+                                <div class="col-md-6">
+                                    <input id="username" type="username" class="form-control"
+                                           name="username" v-model="username" required autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="col-md-4 control-label">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control"
+                                           name="password" v-model="password" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Login
+                                    </button>
+
+                                    <router-link class="btn btn-link" to="password/reset">
+                                        Forgot Your Password?
+                                    </router-link>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="div-login text-center" style="margin:auto;">
-                <button style="display: inline;" id="submit-form" @click="login"
-                        class="btn btn-login ladda-button" data-style="expand-left">
-                    <span class="ladda-label">login</span>
-                </button>
-            </div>
-        </div>
-        <div class="login-links">
-            <a href="/password/reset">Forgot password?</a>
-            <br>
-            <a href="/register">Don't have an account? <strong>Sign Up</strong></a>
         </div>
     </div>
 </template>
@@ -36,9 +57,11 @@
 
 <script>
     export default {
+        props: ['errors'],
+
         data() {
             return {
-                email: '',
+                username: '',
                 password: ''
             }
         },

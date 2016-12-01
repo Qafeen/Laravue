@@ -1,8 +1,7 @@
 <template>
-
     <div>
         <div class="title m-b-md">
-            Laravue
+            {{ title }}
         </div>
 
         <div class="links">
@@ -15,8 +14,6 @@
 </template>
 
 <style>
-
-
     html, body {
         background-color: #fff;
         color: #636b6f;
