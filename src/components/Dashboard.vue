@@ -1,6 +1,5 @@
 <template>
-    <!-- BEGIN MAIN CONTENT -->
-    <div id="main-content" class="dashboard">
+    <div>
         <div class="page-title"> <i class="icon-custom-left"></i>
             <h3>Activity center</h3>
         </div>
@@ -11,6 +10,7 @@
 </style>
 <script>
     export default {
+
         data() {
             return {
                 msg: 'hello vue'
