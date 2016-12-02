@@ -1,9 +1,20 @@
 {
-  "name": "laravue",
-  "version": "1.0.0",
-  "description": "SPA framework which is highly compatible with Laravel.",
+  "name": "laravue-framework",
+  "version": "0.0.1",
+  "description": "Single page framework which is highly compatible with Laravel.",
+  "keywords": [
+      "Single Page Application framework",
+      "SPA",
+      "Laravel and Vue"
+  ],
   "author": "Mohammed Mudassir",
+  "email": "hello@mudasir.me",
+  "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Qafeen/Laravue.git"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js"
