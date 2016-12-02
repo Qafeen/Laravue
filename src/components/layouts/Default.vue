@@ -7,19 +7,11 @@
 </template>
 
 <script>
-	import AppMessage from '../partials/message.vue'
-
   	export default {
     	name : 'DefaultLayout',
 
     	data() {
-    	    return {
-    	        isLoggedIn: Boolean(localStorage.token)
-    	    }
-    	},
-
-    	components : {
-    		AppMessage
+    	    return { }
     	}
   	}
 </script>

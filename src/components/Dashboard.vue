@@ -1,13 +1,16 @@
 <template>
-    <div>
-        <div class="page-title"> <i class="icon-custom-left"></i>
-            <h3>Activity center</h3>
+    <div class="container">
+        <div class="row">
+            <div class="page-title"> <i class="icon-custom-left"></i>
+                <h3>Activity center</h3>
+            </div>
         </div>
     </div>
     <!-- END MAIN CONTENT -->
 </template>
-<style>
-</style>
+
+<style></style>
+
 <script>
     export default {
 

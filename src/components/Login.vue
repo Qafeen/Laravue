@@ -1,44 +1,13 @@
 <template>
     <div>
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="">
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Register</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+        <app-header></app-header>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">Login</div>
                         <div class="panel-body">
+                            <app-message :errors="errors"></app-message>
                             <div class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label for="username" class="col-md-4 control-label">E-Mail Address</label>
@@ -70,7 +39,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button class="btn btn-primary" @click="login()">
                                             Login
                                         </button>
 
@@ -79,42 +48,60 @@
                                         </router-link>
                                     </div>
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </template>
 
-<style></style>
-
 <script>
-    export default {
-        props: ['errors'],
+    import AppHeader from './partials/header.vue';
+    import AppMessage from './partials/message.vue';
 
+    export default {
         data() {
             return {
                 username: '',
-                password: ''
+                password: '',
+                errors: ''
             }
         },
 
         methods: {
             login() {
                 let _this = this;
-
-                axios.post(`${config.api}/login`, this.$data)
-                .then(function(response) {
+                let response = function (response) {
                     console.log(response)
                     window.localStorage.user  = JSON.stringify(response.data.user);
                     window.localStorage.token = response.data.token;
 
-                    _this.$router.push('/');
+                    _this.$router.push('/dashboard');
                     _this.$router.go(1);
-                })
+                }
+
+                let errorResponse = function() {
+                    _this.errors = 'Unable to login.';
+                }
+
+                // Commenting for now
+                // axios.post(`${config.api}/login`, this.$data).then(response, errorResponse);
+
+                response({
+                    data: {
+                        user: {
+                            name: _this.username
+                        },
+                        token: '123456abc'
+                    }
+                });
             }
+        },
+
+        components: {
+            AppHeader, AppMessage
         }
     }
 </script>
