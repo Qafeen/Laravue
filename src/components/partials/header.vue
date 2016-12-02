@@ -28,7 +28,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <!-- Authentication Links -->
                                 <li>
-                                    <a href="" @click="logout()">Logout</a>
+                                    <a @click="logout()">Logout</a>
                                 </li>
                             </ul>
                         </li>
@@ -81,7 +81,7 @@
             logout() {
                 window.localStorage.clear();
 
-                this.$router.push({name: 'login'});
+                this.$router.push({name: 'welcome'});
                 this.$router.go(1);
             },
 
