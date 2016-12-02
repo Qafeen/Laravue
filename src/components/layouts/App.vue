@@ -30,6 +30,6 @@
   	}
 </script>
 
-<style>
-    @import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
+<style type="scss">
+    @import '../../assets/sass/app.scss'
 </style>
