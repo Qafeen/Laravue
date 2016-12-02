@@ -3,7 +3,6 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -20,12 +19,19 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right" v-show="isLoggedIn">
+                    <ul class="nav navbar-nav navbar-right" v-show="isLoggedIn()">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ user().name }} <span class="caret"></span>
                             </a>
-                        <ul>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <!-- Authentication Links -->
+                                <li>
+                                    <a href="" @click="logout()">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -36,12 +42,6 @@
                         </li>
                         <li>
                             <router-link to="/register">Register</router-link>
-                        </li>
-                    </ul>
-                    <ul class="dropdown-menu" role="menu" v-show="isLoggedIn()">
-                        <!-- Authentication Links -->
-                        <li>
-                            <a href="" @click="logout()">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -92,7 +92,7 @@
             },
 
             user() {
-                return JSON.parse(localStorage.user) || {name: ''};
+                return JSON.parse(localStorage.getItem('user')) || {name: ''};
             }
         }
     }
