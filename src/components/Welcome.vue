@@ -1,6 +1,10 @@
 <template>
     <div class="flex-center position-ref full-height">
         <div class="content">
+            <div class="top-right links">
+                <router-link to="login">Login</router-link>
+                <router-link to="register">Register</router-link>
+            </div>
             <div class="title m-b-md">
                 {{ title }}
             </div>
@@ -8,8 +12,6 @@
             <div class="links">
                 <a href="https://github.com/Qafeen/Laravue/wiki">Documentation</a>
                 <a href="https://github.com/Qafeen/Laravue">GitHub</a>
-                <router-link to="login">Login</router-link>
-                <router-link to="register">Register</router-link>
             </div>
         </div>
     </div>
