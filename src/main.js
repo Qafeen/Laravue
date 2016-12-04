@@ -38,14 +38,15 @@ router.beforeEach((to, from, next) => {
     }
 });
 
+axios.defaults.baseURL = config.api;
+
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
  * the outgoing requests issued by this application. The CSRF middleware
  * included with Laravel will automatically verify the header's value.
  */
-
 axios.interceptors.request.use(function (config) {
-	config.headers.common['X-PERSONAL-TOKEN'] = localStorage.token || '';
+    config.headers.common['X-PERSONAL-TOKEN'] = localStorage.token || '';
 
     return config;
 }, function (error) {

@@ -8,7 +8,7 @@
  */
 window.config = {
     appname: 'Laravue',
-    api: 'http://api.laravue.dev/v1'
+    api: 'http://api.laravue.dev/'
 };
 
 /**
