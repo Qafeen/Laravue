@@ -1,6 +1,6 @@
 {
   "name": "laravue-framework",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Single page framework which is highly compatible with Laravel.",
   "keywords": [
       "Single Page Application framework",
