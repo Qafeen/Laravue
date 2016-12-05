@@ -1,6 +1,4 @@
-# Laravue
-
-### A Decoupled Single Page Application Framework.
+## Laravue (A Decoupled Single Page Application Framework.)
 
 ### Get Started
 
@@ -18,7 +16,7 @@ npm run dev
 npm run build
 ```
 
-1. All vue components file are placed in src folder.
+1. All vue component files are placed in `src` folder.
 2. Currently Laravue is in development stage.
 3. Feel free to contribute and push this project to next level.
 
