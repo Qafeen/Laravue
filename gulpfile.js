@@ -22,9 +22,11 @@ elixir.config.css.sass.folder = './sass';
 elixir(function(mix) {
     mix
 
-    .sass('app.scss', 'public/css/app.css')
+    .sass('app.scss', 'public/dist/css/app.css')
 
-    .webpack('main.js', 'public/js/app.js')
+    .webpack('main.js', 'public/dist/js/app.js')
 
-    .browserSync();
+    .browserSync({
+        proxy: 'laravue.devi'
+    });
 });

@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 // import { sync } from 'vuex-router-sync';
+import Vue from 'vue';
 import store from '../storage/store';
 import VueRouter from 'vue-router';
 import routes from './routes';

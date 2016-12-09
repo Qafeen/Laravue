@@ -77,8 +77,8 @@
                     window.localStorage.user  = JSON.stringify(response.data.user);
                     window.localStorage.token = response.data.token;
 
-                    vm.router.push('/dashboard');
-                    vm.router.go(1);
+                    vm.$router.push('/dashboard');
+                    vm.$router.go(1);
                 }
 
                 let errorResponse = function() {
@@ -86,7 +86,7 @@
                 }
 
                 // Commenting for now
-                axios.post(`${config.api}/login`, this.$data).then(response, errorResponse);
+                // axios.post(`${config.api}/login`, this.$data).then(response, errorResponse);
 
                 response({
                     data: {
