@@ -24,6 +24,3 @@ window.config = {
 window._     = require('lodash');
 window.Vue 	 = require('vue');
 window.axios = require('axios');
-window.$     = window.jQuery = require('jquery');
-
-require('bootstrap');

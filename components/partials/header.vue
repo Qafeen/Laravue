@@ -22,7 +22,7 @@
                     <ul class="nav navbar-nav navbar-right" v-show="isLoggedIn()">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ user().name }} <span class="caret"></span>
+                                {{ user.name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">

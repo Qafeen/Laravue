@@ -159,6 +159,8 @@
 </template>
 
 <script>
+    import $ from 'jquery';
+
     export default {
         /*
          * The component's data.

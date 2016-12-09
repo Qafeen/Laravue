@@ -16,6 +16,5 @@
   	}
 </script>
 
-<style type="scss">
-    @import '../../assets/sass/app.scss'
+<style>
 </style>

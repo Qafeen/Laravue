@@ -72,27 +72,26 @@
 
         methods: {
             login() {
-                let _this = this;
+                let vm = this;
                 let response = function (response) {
-                    console.log(response)
                     window.localStorage.user  = JSON.stringify(response.data.user);
                     window.localStorage.token = response.data.token;
 
-                    _this.$router.push('/dashboard');
-                    _this.$router.go(1);
+                    vm.router.push('/dashboard');
+                    vm.router.go(1);
                 }
 
                 let errorResponse = function() {
-                    _this.errors = 'Unable to login.';
+                    vm.errors = 'Unable to login.';
                 }
 
                 // Commenting for now
-                // axios.post(`${config.api}/login`, this.$data).then(response, errorResponse);
+                axios.post(`${config.api}/login`, this.$data).then(response, errorResponse);
 
                 response({
                     data: {
                         user: {
-                            name: _this.username
+                            name: vm.username
                         },
                         token: '123456abc'
                     }
