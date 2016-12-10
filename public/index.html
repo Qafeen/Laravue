@@ -10,18 +10,17 @@
         <title>{{ $route.meta.title }}</title>
     </template>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/dist/css/app.css">
 </head>
 <body>
+    <div id="app">
+        <transition name="fade">
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
+    </div>
 
-	<div id="app">
-		<router-view></router-view>
-	</div>
-
-	<!-- built files will be auto injected -->
-
+    <script src="/dist/js/app.js"></script>
 </body>
 </html>

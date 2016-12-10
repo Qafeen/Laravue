@@ -1,7 +1,7 @@
 export default [
     {
         path: '/',
-        component: require('./components/layouts/Default.vue'),
+        component: require('../components/layouts/Default.vue'),
         name: 'DefaultLayout',
         children: [
             {
@@ -10,23 +10,23 @@ export default [
                 meta: {
                     title: 'Welcome'
                 },
-                component: require('./components/Welcome.vue')
+                component: require('../components/Welcome.vue')
             },
             {
                 path: '/login/',
                 name: 'login',
-                component: require('./components/Login.vue')
+                component: require('../components/Login.vue')
             },
             {
                 path: '/register/',
                 name: 'register',
-                component: require('./components/Register.vue')
+                component: require('../components/Register.vue')
             },
         ]
     },
     {
         path: '/dashboard',
-        component: require('./components/layouts/App.vue'),
+        component: require('../components/layouts/App.vue'),
         meta: {
             isAuthPage: true
         },
@@ -37,7 +37,7 @@ export default [
                 meta: {
                     title: 'Dashboard'
                 },
-                component: require('./components/Dashboard.vue')
+                component: require('../components/Dashboard.vue')
             },
         ]
     }

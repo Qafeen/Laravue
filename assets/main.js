@@ -7,7 +7,8 @@
 
 require('./bootstrap');
 // import { sync } from 'vuex-router-sync';
-import store from './storage/store';
+import Vue from 'vue';
+import store from '../storage/store';
 import VueRouter from 'vue-router';
 import routes from './routes';
 
@@ -60,9 +61,5 @@ new Vue({
     data() {
         return { }
     },
-    methods: {
-        isAuth() {
-            return localStorage.token || false;
-        }
-    }
+    methods: { }
 }).$mount('#app');
